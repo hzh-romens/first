@@ -1,0 +1,1 @@
+include ':app', ':servicedemo', ':recyclerdemo', ':viewserver', ':viewserver-sample', ':viewdragdemo', ':syncdemo', ':drawabledemo'
