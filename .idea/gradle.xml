@@ -11,12 +11,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/drawabledemo" />
+            <option value="$PROJECT_DIR$/newdemo" />
             <option value="$PROJECT_DIR$/recyclerdemo" />
             <option value="$PROJECT_DIR$/servicedemo" />
             <option value="$PROJECT_DIR$/syncdemo" />
             <option value="$PROJECT_DIR$/viewdragdemo" />
-            <option value="$PROJECT_DIR$/viewserver" />
-            <option value="$PROJECT_DIR$/viewserver-sample" />
           </set>
         </option>
       </GradleProjectSettings>

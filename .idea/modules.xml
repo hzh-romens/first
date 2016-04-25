@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/HackDemo.iml" filepath="$PROJECT_DIR$/HackDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/drawabledemo/drawabledemo.iml" filepath="$PROJECT_DIR$/drawabledemo/drawabledemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first.iml" filepath="$PROJECT_DIR$/first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/newdemo/newdemo.iml" filepath="$PROJECT_DIR$/newdemo/newdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerdemo/recyclerdemo.iml" filepath="$PROJECT_DIR$/recyclerdemo/recyclerdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/syncdemo/syncdemo.iml" filepath="$PROJECT_DIR$/syncdemo/syncdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewdragdemo/viewdragdemo.iml" filepath="$PROJECT_DIR$/viewdragdemo/viewdragdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewserver/viewserver.iml" filepath="$PROJECT_DIR$/viewserver/viewserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewserver-sample/viewserver-sample.iml" filepath="$PROJECT_DIR$/viewserver-sample/viewserver-sample.iml" />
     </modules>
   </component>
 </project>
