@@ -30,5 +30,10 @@ public class CloudImageView extends SimpleDraweeView {
     public CloudImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
-    //  public void set
+
+    //下载单张图片时
+    public void DisplayImage(String url, Context context) {
+        SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context);
+        simpleDraweeView.s
+    }
 }

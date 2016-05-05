@@ -3,6 +3,7 @@
     package="com.example.hzh.observedemo">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,6 +20,11 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".activity.BaseActivity"></activity>
         <activity android:name=".activity.AnimationActivity"></activity>
+        <activity
+            android:name=".activity.ActionBarsActivity"
+            android:theme="@style/AppTheme.Base"></activity>
+        <activity android:name=".activity.MediaPlayActivity"></activity>
+        <activity android:name=".activity.SurfaceViewActivity"></activity>
     </application>
 
 </manifest>

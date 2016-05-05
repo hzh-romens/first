@@ -118,7 +118,7 @@ public class LaunchActivity extends BaseActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            View view = View.inflate(container.getContext(), R.layout.layout_title, null);
+            View view = View.inflate(container.getContext(), R.layout.layout_item_title, null);
             TextView title = (TextView) view.findViewById(R.id.title);
             title.setText(titles[position]);
             title.setOnClickListener(new View.OnClickListener() {

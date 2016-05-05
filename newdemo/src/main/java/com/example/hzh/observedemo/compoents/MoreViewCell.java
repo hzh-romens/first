@@ -17,7 +17,7 @@ public class MoreViewCell extends FrameLayout {
 
     public MoreViewCell(Context context) {
         super(context);
-        View view = LayoutInflater.from(context).inflate(R.layout.item_more, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.layout_item_more, null);
         more = (Button) view.findViewById(R.id.more);
         more.setOnClickListener(new OnClickListener() {
             @Override

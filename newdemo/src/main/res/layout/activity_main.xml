@@ -1,18 +1,71 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_white_1000"
     tools:context=".MainActivity">
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tablayout"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/margin_large" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </android.support.design.widget.TabLayout>
+    <RadioGroup
+        android:id="@+id/tabContainer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_large"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
 
-</RelativeLayout>
+        <RadioButton
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/home_drawable_select"
+            android:gravity="center_horizontal"
+            android:text="home"
+            android:checked="true"
+            android:textColor="@drawable/textcolor_select"
+            android:textSize="@dimen/text_standard" />
+
+        <RadioButton
+            android:id="@+id/news"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/news_drawable_select"
+            android:gravity="center"
+            android:text="news"
+            android:textColor="@drawable/textcolor_select"
+            android:textSize="@dimen/text_standard" />
+
+        <RadioButton
+            android:id="@+id/distance"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/disatnce_drawable_select"
+            android:gravity="center"
+            android:text="distance"
+            android:textColor="@drawable/textcolor_select"
+            android:textSize="@dimen/text_standard" />
+
+        <RadioButton
+            android:id="@+id/user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/user_drawable_select"
+            android:gravity="center"
+            android:text="user"
+            android:textColor="@drawable/textcolor_select"
+            android:textSize="@dimen/text_standard" />
+    </RadioGroup>
+
+</FrameLayout>

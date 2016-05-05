@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="42dp">
+
+    <TextView
+        android:id="@+id/qrCode"
+        android:layout_width="@dimen/margin_large"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:drawableTop="@mipmap/ic_qr"
+        android:gravity="center"
+        android:text="扫啊扫"
+        android:textSize="11sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="52dp"
+        android:layout_marginRight="52dp"
+        android:background="@drawable/text_radius_shape"
+        android:drawableLeft="@mipmap/ic_search"
+        android:drawablePadding="@dimen/margin_small"
+        android:gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="搜索店铺，商品"
+        android:textColor="@color/material_grey_600" />`
+
+    <TextView
+        android:layout_width="@dimen/margin_large"
+        android:layout_height="42dp"
+        android:layout_gravity="right|center_vertical"
+        android:drawableTop="@mipmap/ic_message"
+        android:gravity="center"
+        android:text="消息"
+        android:textSize="11sp" />
+
+</FrameLayout>
