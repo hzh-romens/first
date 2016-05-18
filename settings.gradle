@@ -1,2 +1,1 @@
-
 include ':app', ':servicedemo', ':recyclerdemo', ':viewdragdemo', ':syncdemo', ':drawabledemo', ':newdemo'
