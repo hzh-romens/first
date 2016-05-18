@@ -75,7 +75,7 @@ public class MainActivity extends BaseActivity {
         fragments.add(new TestFragment());
         fragments.add(new Otherfragment());
         fragments.add(new ManagerFragment());
-
+        //检测merge测试
     }
 
     private class MainFragmentAdapter extends FragmentPagerAdapter {
