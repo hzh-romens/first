@@ -47,7 +47,7 @@ public class MainFragment extends Fragment {
         toolbar = (Toolbar) view.findViewById(R.id.toolbar);
         initToolBar();
         initData();
-        toolbar.setBackgroundColor(getResources().getColor(R.color.md_red_300));
+        //toolbar.setBackgroundColor(getResources().getColor(R.color.md_red_300));
         adapter = new ActionBarAdapter();
         listView.setAdapter(adapter);
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
@@ -61,24 +61,24 @@ public class MainFragment extends Fragment {
                 if (firstVisibleItem > previouPosition) {
                     //向上滑动
                     if (firstVisibleItem != previouPosition) {
-                        int height = view.getChildAt(0).getHeight();
-                        int alpha = (firstVisibleItem - previouPosition) * height;
-                        if (alpha >= toolbar.getHeight()) {
-                            toolbar.getBackground().setAlpha(0);
-                        } else {
-                            toolbar.getBackground().setAlpha(alpha);
-                        }
+//                        int height = view.getChildAt(0).getHeight();
+//                        int alpha = (firstVisibleItem - previouPosition) * height;
+//                        if (alpha >= toolbar.getHeight()) {
+//                            toolbar.getBackground().setAlpha(0);
+//                        } else {
+//                            toolbar.getBackground().setAlpha(alpha);
+//                        }
                     }
                 } else {
                     //向下滑动
                     if (view != null && view.getChildAt(0) != null) {
-                        int height = view.getChildAt(0).getHeight();
-                        int alpha = (previouPosition - firstVisibleItem) * height;
-                        if (alpha >= toolbar.getHeight() || firstVisibleItem == 0) {
-                            toolbar.setBackgroundColor(getResources().getColor(R.color.md_red_300));
-                        } else {
-                            toolbar.getBackground().setAlpha(alpha);
-                        }
+//                        int height = view.getChildAt(0).getHeight();
+//                        int alpha = (previouPosition - firstVisibleItem) * height;
+//                        if (alpha >= toolbar.getHeight() || firstVisibleItem == 0) {
+//                            toolbar.setBackgroundColor(getResources().getColor(R.color.md_red_300));
+//                        } else {
+//                            toolbar.getBackground().setAlpha(alpha);
+//                        }
                     }
                 }
             }

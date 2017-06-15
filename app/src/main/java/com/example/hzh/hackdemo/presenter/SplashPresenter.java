@@ -10,27 +10,32 @@ import com.example.hzh.hackdemo.view.ISplashView;
 public class SplashPresenter {
     private IConnectionStatus mIConnectionStatus;
     private ISplashView mISplashView;
-    public SplashPresenter(){
+
+    public SplashPresenter() {
         this(new ConnectionStatus());
     }
-    public SplashPresenter(IConnectionStatus iConnectionStatus){
-        mIConnectionStatus=iConnectionStatus;
+
+    public SplashPresenter(IConnectionStatus iConnectionStatus) {
+        mIConnectionStatus = iConnectionStatus;
     }
-    public void setView(ISplashView view){
-        this.mISplashView=view;
+
+    public void setView(ISplashView view) {
+        this.mISplashView = view;
     }
-    public ISplashView getView(){
+
+    public ISplashView getView() {
         return mISplashView;
     }
-    public void didFinishLoading(){
-        ISplashView view = getView();
 
-            if (mIConnectionStatus.isOnline()) {
-                view.moveToMainView();
-            } else {
-                view.hidePreogress();
-                view.showNoInetErrorMsg();
-            }
+    public void didFinishLoading() {
+        ISplashView view = getView();
+        if (mIConnectionStatus.isOnline()) {
+            mISplashView.hidePreogress();
+            mISplashView.moveToMainView();
+        } else {
+            mISplashView.hidePreogress();
+            mISplashView.showNoInetErrorMsg();
+        }
 
     }
 

@@ -34,6 +34,6 @@ public class CloudImageView extends SimpleDraweeView {
     //下载单张图片时
     public void DisplayImage(String url, Context context) {
         SimpleDraweeView simpleDraweeView = new SimpleDraweeView(context);
-        simpleDraweeView.s
+       // simpleDraweeView.s
     }
 }

@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/drawabledemo/drawabledemo.iml" filepath="$PROJECT_DIR$/drawabledemo/drawabledemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/excutordemo/excutordemo.iml" filepath="$PROJECT_DIR$/excutordemo/excutordemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/first.iml" filepath="$PROJECT_DIR$/first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/newdemo/newdemo.iml" filepath="$PROJECT_DIR$/newdemo/newdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerdemo/recyclerdemo.iml" filepath="$PROJECT_DIR$/recyclerdemo/recyclerdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/servicedemo/servicedemo.iml" filepath="$PROJECT_DIR$/servicedemo/servicedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/syncdemo/syncdemo.iml" filepath="$PROJECT_DIR$/syncdemo/syncdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testdemo/testdemo.iml" filepath="$PROJECT_DIR$/testdemo/testdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewdragdemo/viewdragdemo.iml" filepath="$PROJECT_DIR$/viewdragdemo/viewdragdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewserver/viewserver.iml" filepath="$PROJECT_DIR$/viewserver/viewserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webkitdemo/webkitdemo.iml" filepath="$PROJECT_DIR$/webkitdemo/webkitdemo.iml" />
     </modules>
   </component>
 </project>

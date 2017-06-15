@@ -9,15 +9,22 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/animation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/drawabledemo" />
+            <option value="$PROJECT_DIR$/excutordemo" />
+            <option value="$PROJECT_DIR$/music" />
+            <option value="$PROJECT_DIR$/myapplication" />
             <option value="$PROJECT_DIR$/newdemo" />
             <option value="$PROJECT_DIR$/recyclerdemo" />
             <option value="$PROJECT_DIR$/servicedemo" />
             <option value="$PROJECT_DIR$/syncdemo" />
+            <option value="$PROJECT_DIR$/testdemo" />
             <option value="$PROJECT_DIR$/viewdragdemo" />
+            <option value="$PROJECT_DIR$/webkitdemo" />
           </set>
         </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

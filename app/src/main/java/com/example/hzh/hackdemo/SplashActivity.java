@@ -13,23 +13,24 @@ import com.example.hzh.hackdemo.view.ISplashView;
 /**
  * Created by HZH on 2015/11/30.
  */
-public class SplashActivity extends AppCompatActivity implements ISplashView{
+public class SplashActivity extends AppCompatActivity implements ISplashView {
     private TextView mTextView;
     private ProgressBar mProgressBar;
-    private ISplashView iSplashView;
-    private SplashPresenter mPresenter=new SplashPresenter();
+    private SplashPresenter mPresenter = new SplashPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         mPresenter.setView(this);
-        mTextView= (TextView) findViewById(R.id.splash_text);
-        mProgressBar= (ProgressBar) findViewById(R.id.splash_progress_bar);
+        mTextView = (TextView) findViewById(R.id.splash_text);
+        mProgressBar = (ProgressBar) findViewById(R.id.splash_progress_bar);
     }
+
     @Override
     protected void onResume() {
         super.onResume();
+        showProgress();
         mPresenter.didFinishLoading();
     }
 
@@ -45,11 +46,15 @@ public class SplashActivity extends AppCompatActivity implements ISplashView{
 
     @Override
     public void showNoInetErrorMsg() {
+        hidePreogress();
         mTextView.setText("No internet");
     }
 
     @Override
     public void moveToMainView() {
+        hidePreogress();
         startActivity(new Intent(this, MainActivity.class));
+        finish();
+        // UIManager.ToOtherActivity(this,MainActivity.class.getName());
     }
 }

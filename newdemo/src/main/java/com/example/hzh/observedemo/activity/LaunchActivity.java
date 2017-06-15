@@ -1,6 +1,5 @@
 package com.example.hzh.observedemo.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -11,8 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.hzh.observedemo.MainActivity;
 import com.example.hzh.observedemo.R;
+import com.example.hzh.observedemo.utils.SharedPerfrenceUtils;
+import com.example.hzh.observedemo.utils.UIOpenhelper;
 
 /**
  * Created by HZH on 2016/4/14.
@@ -22,18 +22,34 @@ public class LaunchActivity extends BaseActivity {
     private ImageView icon, icon2;
     private int[] images;
     private String[] titles;
+    private TextView pageTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+        SharedPerfrenceUtils.getInstance().saveLaunched("launch", true);
         initConfig();
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         icon = (ImageView) findViewById(R.id.icons);
         icon2 = (ImageView) findViewById(R.id.icons2);
+        pageTitle = (TextView) findViewById(R.id.pagetitle);
         viewPager.setAdapter(new pagerAdapter());
         viewPager.setPageMargin(0);
         viewPager.setOffscreenPageLimit(1);
+        pageTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (viewPager.getCurrentItem() == titles.length - 1) {
+                    if (SharedPerfrenceUtils.getInstance().isLaunched("launch") && SharedPerfrenceUtils.getInstance().isLaunched("login")) {
+                        UIOpenhelper.ToOther(LaunchActivity.this, MainActivity.class);
+                    } else {
+                        UIOpenhelper.ToOther(LaunchActivity.this, LoginActivity.class);
+                    }
+
+                }
+            }
+        });
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -43,6 +59,7 @@ public class LaunchActivity extends BaseActivity {
             @Override
             public void onPageSelected(int position) {
 
+                pageTitle.setText(titles[position]);
             }
 
             @Override
@@ -50,6 +67,7 @@ public class LaunchActivity extends BaseActivity {
                 if (state == ViewPager.SCROLL_STATE_IDLE || state == ViewPager.SCROLL_STATE_SETTLING) {
                     final ImageView fadeInImage;
                     final ImageView fadeOutImage;
+                    icon2.setVisibility(View.VISIBLE);
                     fadeInImage = icon;
                     fadeOutImage = icon2;
                     fadeInImage.clearAnimation();
@@ -59,12 +77,12 @@ public class LaunchActivity extends BaseActivity {
                     animation.setAnimationListener(new Animation.AnimationListener() {
                         @Override
                         public void onAnimationStart(Animation animation) {
+                            fadeInImage.setImageResource(images[viewPager.getCurrentItem()]);
 
                         }
 
                         @Override
                         public void onAnimationEnd(Animation animation) {
-                            fadeOutImage.setVisibility(View.GONE);
                         }
 
                         @Override
@@ -76,12 +94,11 @@ public class LaunchActivity extends BaseActivity {
                     animation1.setAnimationListener(new Animation.AnimationListener() {
                         @Override
                         public void onAnimationStart(Animation animation) {
-
+                            fadeOutImage.setImageResource(images[viewPager.getCurrentItem()]);
                         }
 
                         @Override
                         public void onAnimationEnd(Animation animation) {
-                            fadeInImage.setVisibility(View.GONE);
                         }
 
                         @Override
@@ -100,7 +117,7 @@ public class LaunchActivity extends BaseActivity {
         images = new int[]{
                 R.mipmap.intro1, R.mipmap.intro2, R.mipmap.intro3};
         titles = new String[]{
-                "测试1", "测试2", "测试3"
+                "页面一", "页面二", "页面三"
         };
     }
 
@@ -124,12 +141,15 @@ public class LaunchActivity extends BaseActivity {
             title.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(LaunchActivity.this, MainActivity.class));
-                    finish();
+                    if (SharedPerfrenceUtils.getInstance().isLaunched("launch")) {
+                        UIOpenhelper.ToOther(LaunchActivity.this, MainActivity.class);
+                    } else {
+                        UIOpenhelper.ToOther(LaunchActivity.this, LoginActivity.class);
+                    }
                 }
             });
             container.addView(view);
-            return view;
+            return container;
         }
 
         @Override

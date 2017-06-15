@@ -2,7 +2,7 @@ package com.example.hzh.observedemo.db;
 
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.hzh.observedemo.model.Test;
+import com.example.hzh.observedemo.entitiy.Test;
 
 import java.util.Map;
 

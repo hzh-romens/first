@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.example.hzh.observedemo.R;
-import com.example.hzh.observedemo.model.ViewPagerEntity;
+import com.example.hzh.observedemo.entitiy.ViewPagerEntity;
 import com.example.hzh.observedemo.utils.OkHttpClientManager;
 
 import java.util.List;
