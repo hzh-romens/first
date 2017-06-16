@@ -34,22 +34,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         start = (TextView) findViewById(R.id.start);
-//        MyThread myThread1=new MyThread("一");
-//        MyThread myThread2=new MyThread("二");
-//        MyThread myThread3=new MyThread("三");
-//        myThread1.start();
-//        myThread2.start();
-//        myThread3.start();
+        KaoyaSource kaoyaSource = new KaoyaSource();
+        Mutil_Producer producer = new Mutil_Producer(kaoyaSource);
+        Mutil_Consumer consumer = new Mutil_Consumer(kaoyaSource);
 
-        //Thread thread=new Thread(MyRunable);
-        MyRunable myRunable = new MyRunable();
-        MyThread myThread2 = new MyThread("二");
-        MyThread myThread3 = new MyThread("三");
+        //生产者线程
+        Thread t0 = new Thread(producer);
+        Thread t1 = new Thread(producer);
+        //消费者线程
 
-        new Thread(myRunable, "线程一").start();
-        new Thread(myRunable, "线程二").start();
-        new Thread(myRunable, "线程三").start();
-        DexClassLoader dexClassLoader=new DexClassLoader()
+        Thread t2 = new Thread(consumer);
+        Thread t3 = new Thread(consumer);
+
+        t0.start();
+        t1.start();
+        t2.start();
+        t3.start();
 
     }
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void run() {
-            while (ticket>0){
+            while (ticket > 0) {
                 sale();
             }
         }
@@ -86,8 +86,85 @@ public class MainActivity extends AppCompatActivity {
                 if (ticket > 0) {
                     Log.i("~~~~", Thread.currentThread().getName() + "正在卖第" + ticket-- + "票");
                 } else {
-                    Log.i("~~~~~","票卖完了");
+                    Log.i("~~~~~", "票卖完了");
                 }
+            }
+        }
+    }
+
+    public class KaoyaSource {
+        private int maxCount = 100;
+        private String name;
+        private int count = 0;//烤鸭的初始数量
+        //一个盘子只能装三只烤鸭，当盘子里有三只烤鸭的时候
+        //private boolean flag = false;//判断是否有需要线程等待的标志
+
+        //生产烤鸭
+        public synchronized void product(String name) {
+
+            while (count == 3) {
+                //此时有烤鸭等待
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            this.name = name + count;//设置烤鸭的名称
+            count++;
+            //maxCount--;
+            System.out.println(Thread.currentThread().getName() + "...生产者..." + name);
+            //flag = true;//有烤鸭后标志改变
+            notifyAll();//通知消费线程可以消费了
+        }
+
+        //消费烤鸭
+        public synchronized void consume(String name) {
+            while (count == 0) {
+                                                //如果没有烤鸭就等待
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            //flag = false;
+            //maxCount--;
+            count--;
+            this.name = name + count;
+            System.out.println(Thread.currentThread().getName() + "...消费者........" + name);//消费烤鸭1
+            notifyAll();//通知生成者生产烤鸭
+        }
+    }
+
+    class Mutil_Producer implements Runnable {
+        private KaoyaSource r;
+
+        Mutil_Producer(KaoyaSource r) {
+            this.r = r;
+        }
+
+        @Override
+        public void run() {
+           // while (r.getMaxCount()>=0) {
+            for (int i = 0; i < 100; i++) {
+                r.product("北京烤鸭"+i);
+            }
+
+            //}
+        }
+    }
+
+    class Mutil_Consumer implements Runnable {
+        private KaoyaSource r;
+
+        Mutil_Consumer(KaoyaSource r) {
+            this.r = r;
+        }
+
+        public void run() {
+            for (int i = 0; i < 100; i++) {
+                r.consume("北京烤鸭"+i);
             }
         }
     }
